@@ -3,6 +3,9 @@
 ## Introduction
 The AI-Powered Home Finder is a groundbreaking solution revolutionizing the home search experience in Gurgaon. Utilizing advanced AI algorithms, it delivers personalized recommendations based on individual preferences and requirements. Users can input specific details such as price range and preferred amenities to receive tailored suggestions. The platform combines Facilities-based and Price-based recommendation engines, allowing users to customize weighting for optimal results. Additionally, the HomeLoan Assurance Advisor provides invaluable insights into loan eligibility, ensuring informed decision-making for property investments. Welcome to the future of home hunting with precision and convenience.
 
+![image](https://github.com/yuvraaj2002/FindHome.AI/assets/123289647/beeebf92-6c26-47cc-bf21-0c5e72dae305)
+LIVE PROJECT LINK ➡️ http://16.171.20.104:8501/
+
 ## Getting Started
 Follow the below mentioned steps for setting up the Project Locally ⬇️
 
