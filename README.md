@@ -24,13 +24,6 @@ Follow the below mentioned steps for setting up the Project Locally ⬇️
 
 - Explore the Features: Once the application is up and running, explore its features as per the project description. Input your preferences, receive personalized recommendations, and utilize the HomeLoan Assurance Advisor module to assess your loan eligibility.
 
-### Prerequisites
-
-List any software, tools, or libraries that need to be installed before running the project. Include versions if necessary.
-
-```bash
-# Example of installing prerequisites
-pip install -r requirements.txt
 
 Link to Word2vec Github repo : https://github.com/mmihaltz/word2vec-GoogleNews-vectors?tab=readme-ov-file
 
