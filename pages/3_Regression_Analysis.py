@@ -44,15 +44,15 @@ def conduct_f_test():
             unsafe_allow_html=True,
         )
         st.markdown(
-            "<p style='font-size: 19px; text-align: left;background-color:#CEFCBA;padding:1rem;'>Explore clustering algorithms—K-Means.</p>",
+            "<p style='font-size: 19px; text-align: left;background-color:#CEFCBA;padding:1rem;'>MSR value is 867.66 and MSE value is 1.0047</p>",
             unsafe_allow_html=True,
         )
         st.markdown(
-            "<p style='font-size: 19px; text-align: left;background-color:#CEFCBA;padding:1rem;'>Explore clustering algorithms—K-Means.</p>",
+            "<p style='font-size: 19px; text-align: left;background-color:#CEFCBA;padding:1rem;'>F Statsitic Value 863.3</p>",
             unsafe_allow_html=True,
         )
         st.markdown(
-            "<p style='font-size: 19px; text-align: left;background-color:#CEFCBA;padding:1rem;'>Explore clustering algorithms—K-Means.</p>",
+            "<p style='font-size: 19px; text-align: left;background-color:#CEFCBA;padding:1rem;'>F Statsitic Value 863.3</p>",
             unsafe_allow_html=True,
         )
 
@@ -118,6 +118,64 @@ def independent_variables_analysis():
         unsafe_allow_html=True,
     )
 
+    # Data extracted from the regression summary
+    variables = ['const', 'Builtup Area', 'Balcony', 'Age Possesion', 'Luxury Category', 'Floor Category','Property Type', 'Property Type', 'Sector', 'Bedroom', 'Servant Room', 'Furnishing Type']
+    coefficients = [0.1585, 0.7818, 0.0804, -0.0629, 0.0011, 0.0181, 0.3633, 0.0402, 0.2036, 0.0587, -0.1049, 0.0273]
+    ci_lower = [0.134, 0.740, 0.063, -0.081, -0.011, 0.006, 0.336, -0.008, 0.158, 0.044, -0.119, 0.017]
+    ci_upper = [0.183, 0.823, 0.097, -0.045, 0.013, 0.031, 0.391, 0.089, 0.249, 0.074, -0.091, 0.038]
+
+    # Create the plot
+    fig = go.Figure()
+
+    # Add coefficients as points
+    fig.add_trace(go.Scatter(
+        x=variables,
+        y=coefficients,
+        mode='markers',
+        marker=dict(color='blue', size=10),
+        name='Coefficients'
+    ))
+
+    # Add confidence intervals as error bars
+    fig.add_trace(go.Scatter(
+        x=variables,
+        y=ci_lower,
+        mode='lines',
+        line=dict(color='black', width=1),
+        name='Lower CI'
+    ))
+    fig.add_trace(go.Scatter(
+        x=variables,
+        y=ci_upper,
+        mode='lines',
+        line=dict(color='black', width=1),
+        name='Upper CI'
+    ))
+
+    # Adding error bars
+    fig.update_traces(error_y=dict(
+        type='data',
+        symmetric=False,
+        array=[u - c for u, c in zip(ci_upper, coefficients)],
+        arrayminus=[c - l for c, l in zip(coefficients, ci_lower)],
+        thickness=1.5,
+        width=5,
+        color='black'
+    ))
+
+    # Update layout
+    fig.update_layout(
+        title='Coefficient Plot with 95% Confidence Intervals',
+        xaxis_title='Variables',
+        yaxis_title='Coefficient Value',
+        xaxis=dict(tickmode='linear'),
+        width=1500,
+        height=700,
+        showlegend=False
+    )
+
+    st.plotly_chart(fig)
+
 
 
 
@@ -142,10 +200,6 @@ def regression_analysis_ui():
         )
         st.markdown(
             "<p style='font-size: 19px; text-align: left;background-color:#CEFCBA;padding:1rem;'>After evaluating the overall model fit, we analyze each independent variable's influence on the dependent variable. We use the coefficient to assess the relationship's magnitude and a t-test and p-value to determine its statistical significance. Additionally, we construct confidence intervals for each coefficient to estimate the true population value and its precision.</p>",
-            unsafe_allow_html=True,
-        )
-        st.markdown(
-            "<p style='font-size: 19px; text-align: left;background-color:#CEFCBA;padding:1rem;'>Beyond evaluating the fit and individual coefficients, it's crucial to verify whether the data adheres to the underlying assumptions of linear regression. These assumptions ensure the validity of the model's inferences. Common tests employed for this purpose include the Omnibus and Jarque-Bera tests.</p>",
             unsafe_allow_html=True,
         )
 
