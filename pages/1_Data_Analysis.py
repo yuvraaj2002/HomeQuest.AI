@@ -53,66 +53,67 @@ def multivariate_analysis(data):
 
         # Correlation between property price and built-up area
         with container:
-            fig = px.scatter(data, x='built_up_area', y='price',
-                             title='Correlation between Property Price and Built-up Area')
-            st.plotly_chart(fig)
+            fig1 = px.scatter(data, x='built_up_area', y='price',
+                              title='Correlation between Property Price and Built-up Area')
+            st.plotly_chart(fig1)
 
         # Effect of the number of bedrooms on property price
         with container:
-            fig = px.violin(data, x='bedRoom', y='price', box=True, points="all",
-                            title='Effect of Number of Bedrooms on Property Price')
-            st.plotly_chart(fig)
+            fig2 = px.violin(data, x='bedRoom', y='price', box=True, points="all",
+                             title='Effect of Number of Bedrooms on Property Price')
+            st.plotly_chart(fig2)
 
         # Relationship between the number of bathrooms and property price
         with container:
-            fig = px.box(data, x='bathroom', y='price', points="all",
-                         title='Relationship between Number of Bathrooms and Property Price')
-            st.plotly_chart(fig)
+            fig3 = px.box(data, x='bathroom', y='price', points="all",
+                          title='Relationship between Number of Bathrooms and Property Price')
+            st.plotly_chart(fig3)
 
         # Impact of having a balcony on property price
         with container:
-            fig = px.violin(data, x='balcony', y='price', box=True, points="all",
-                            title='Impact of Having a Balcony on Property Price')
-            st.plotly_chart(fig)
+            fig4 = px.violin(data, x='balcony', y='price', box=True, points="all",
+                             title='Impact of Having a Balcony on Property Price')
+            st.plotly_chart(fig4)
 
         # Effect of the age of possession on property price
         with container:
-            fig = px.scatter(data, x='agePossession', y='price', title='Effect of Age of Possession on Property Price')
-            st.plotly_chart(fig)
+            fig5 = px.scatter(data, x='agePossession', y='price', title='Effect of Age of Possession on Property Price')
+            st.plotly_chart(fig5)
 
     with col2:
+
         # Container
         container = st.container()
 
         # Correlation between the presence of a servant room and property price
         with container:
-            fig = px.histogram(data, x='price', color='servant room', barmode='stack',
-                               title='Correlation between Servant Room Presence and Property Price')
-            st.plotly_chart(fig)
+            fig6 = px.bar(data, x='servant room', y='price', barmode='group',
+                          title='Correlation between Servant Room and Property Price')
+            st.plotly_chart(fig6)
 
         # Influence of furnishing type on property price
         with container:
-            fig = px.violin(data, x='furnishing_type', y='price', box=True, points="all",
-                            title='Influence of Furnishing Type on Property Price')
-            st.plotly_chart(fig)
+            fig7 = px.violin(data, x='furnishing_type', y='price',
+                             title='Influence of Furnishing Type on Property Price')
+            st.plotly_chart(fig7)
 
         # Impact of luxury category on property price
         with container:
-            fig = px.histogram(data, x='price', color='luxury_category', histfunc='count', nbins=20,
-                               title='Impact of Luxury Category on Property Price')
-            st.plotly_chart(fig)
+            fig8 = px.box(data, x='luxury_category', y='price',
+                          title='Impact of Luxury Category on Property Price')
+            st.plotly_chart(fig8)
 
         # Effect of floor category on property price
         with container:
-            fig = px.histogram(data, x='price', color='floor_category', histnorm='probability density',
-                               title='Effect of Floor Category on Property Price')
-            st.plotly_chart(fig)
+            fig9 = px.box(data, x='floor_category', y='price',
+                          title='Effect of Floor Category on Property Price')
+            st.plotly_chart(fig9)
 
         # Difference in property price between flat and independent house types
         with container:
-            fig = px.box(data, x='Property_Type', y='price',
-                         title='Difference in Property Price between Flat and Independent House Types')
-            st.plotly_chart(fig)
+            fig10 = px.box(data, x='Property_Type', y='price',
+                           title='Difference in Property Price between Flat and Independent House Types')
+            st.plotly_chart(fig10)
 
 
 def visualizations():
