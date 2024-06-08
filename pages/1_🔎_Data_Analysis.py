@@ -39,34 +39,64 @@ def load_dataframe():
     return df
 
 
+
 def univariate_analysis(df):
+    st.markdown(
+        "<h2 style='text-align: left; font-size: 40px; '>Introductory Analysis</h1>",
+        unsafe_allow_html=True,
+    )
 
-    st.title("Introductory Univariate Analysis")
-    col1,col2 = st.columns((1,1),gap ="small")
+    col1, col2 = st.columns(spec=(2, 1), gap="small")
     with col1:
-        # Violin Plot
-        st.subheader('Violin Plot of Price by Property Type')
-        fig_violin = px.violin(df, x="Property_Type", y="price", box=True, points="all")
-        st.plotly_chart(fig_violin)
-
-        # Swarm Plot
-        st.subheader('Swarm Plot of Price by Bedroom')
-        fig_swarm = px.scatter(df, x="bedRoom", y="price", color="bedRoom", marginal_y="violin", marginal_x="box")
-        st.plotly_chart(fig_swarm)
-
-        # Ridgeline Plot
-        st.subheader('Ridgeline Plot of Price by Property Type')
-        fig_ridgeline = px.density_heatmap(df, x="price", y="Property_Type", histfunc="sum", nbinsx=20, nbinsy=20,
-                                           labels={"price": "Price", "Property_Type": "Property Type"})
-        st.plotly_chart(fig_ridgeline)
-
-        # Density Plot
-        st.subheader('Density Plot of Price')
-        fig_density = px.density_contour(df, x="price")
-        st.plotly_chart(fig_density)
-
+        st.dataframe(df.head(8))
     with col2:
-        pass
+        st.markdown(
+            "<p style='font-size: 17px; text-align: left;background-color:#CEFCBA;padding:1rem;'>Welcome to the Univariate Analysis Module! When it comes to understanding data, focusing on one thing at a time is key. It's all about looking closely at one variable at a time, helping us uncover important patterns and insights. Think of it as the first step in exploring data, like peeling back layers to reveal what's underneath and discover the secrets hidden within your data!.</p>",
+            unsafe_allow_html=True,
+        )
+        with st.expander(label = "What is the overall dimensionality of the dataset ?"):
+            st.write(df.shape,"Which means there are around 3630 rows and 12 features")
+        with st.expander(label = "What's the count of categorical/numerical features in our data ?"):
+            st.write("Out of the 12 features, 10 are categorical—6 ordinal and 2 nominal—while 2 are continuous numerical.")
+
+
+    # Plotting the bubble plot
+    sector_counts = df['sector'].value_counts().reset_index()
+    sector_counts.columns = ['sector', 'count']
+
+    # Create bubble plot
+    fig = px.scatter(sector_counts, x='sector', y='count', size='count',
+                     labels={'sector': 'Sector', 'count': 'Count'},
+                     title='Understanding the frequency of sectors',
+                     size_max=50,color_discrete_sequence=['#44844c'])
+
+    # Update layout
+    fig.update_layout(yaxis={'categoryorder': 'total ascending'})
+    st.plotly_chart(fig, use_container_width=True)
+
+
+    # Plotting the pie charts
+    pie_col1, pie_col2, pie_col3,pie_col4 = st.columns(spec=(1, 1, 1,1), gap="large")
+    with pie_col1:
+        # Plot pie chart for employment_type
+        fig1 = px.pie(df, names='luxury_category', title='Distribution of Luxury Category')
+        st.plotly_chart(fig1, use_container_width=True)
+
+    with pie_col2:
+        # Plot pie chart for required_experience
+        fig2 = px.pie(df, names='floor_category', title='Distribution of Floor Category')
+        st.plotly_chart(fig2, use_container_width=True)
+
+    with pie_col3:
+        # Plot pie chart for required_education
+        fig3 = px.pie(df, names='Property_Type', title='Distribution of Property type feature')
+        st.plotly_chart(fig3, use_container_width=True)
+
+    with pie_col4:
+        # Plot pie chart for required_education
+        fig3 = px.pie(df, names='agePossession', title='Distribution of agePossession feature')
+        st.plotly_chart(fig3, use_container_width=True)
+
 
 
 def multivariate_analysis(data):
