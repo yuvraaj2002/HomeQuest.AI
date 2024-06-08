@@ -39,8 +39,34 @@ def load_dataframe():
     return df
 
 
-def univariate_analysis():
+def univariate_analysis(df):
+
     st.title("Introductory Univariate Analysis")
+    col1,col2 = st.columns((1,1),gap ="small")
+    with col1:
+        # Violin Plot
+        st.subheader('Violin Plot of Price by Property Type')
+        fig_violin = px.violin(df, x="Property_Type", y="price", box=True, points="all")
+        st.plotly_chart(fig_violin)
+
+        # Swarm Plot
+        st.subheader('Swarm Plot of Price by Bedroom')
+        fig_swarm = px.scatter(df, x="bedRoom", y="price", color="bedRoom", marginal_y="violin", marginal_x="box")
+        st.plotly_chart(fig_swarm)
+
+        # Ridgeline Plot
+        st.subheader('Ridgeline Plot of Price by Property Type')
+        fig_ridgeline = px.density_heatmap(df, x="price", y="Property_Type", histfunc="sum", nbinsx=20, nbinsy=20,
+                                           labels={"price": "Price", "Property_Type": "Property Type"})
+        st.plotly_chart(fig_ridgeline)
+
+        # Density Plot
+        st.subheader('Density Plot of Price')
+        fig_density = px.density_contour(df, x="price")
+        st.plotly_chart(fig_density)
+
+    with col2:
+        pass
 
 
 def multivariate_analysis(data):
@@ -122,9 +148,9 @@ def visualizations():
     df = load_dataframe()
 
     # Calling the function for adding univariate analysis
-    univariate_analysis()
+    univariate_analysis(df)
 
-
+    # Calling function fo
     multivariate_analysis(df)
 
 
