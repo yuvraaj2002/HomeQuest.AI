@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+import warnings
 import pickle
 
 st.markdown(
@@ -102,11 +103,11 @@ def predict_value(Loan_Input):
 def load_eligibility_Page():
 
     st.markdown(
-        "<h1 style='text-align: center; font-size: 50px; '>Loan Eligibility Module 🏠</h1>",
+        "<h1 style='text-align: center; font-size: 45px; '>Loan Eligibility Module 🏠</h1>",
         unsafe_allow_html=True,
     )
     st.markdown(
-        "<p style='font-size: 22px; text-align: center;padding-left: 2rem;padding-right: 2rem;'>Welcome to our HomeLoan Assurance Advisor, a sophisticated module designed to provide you with invaluable insights into your eligibility for a home loan. Deciding to purchase a property is a significant step, and we understand the importance of financial clarity in this decision-making process. This tool is especially beneficial for those who may be uncertain about their eligibility or wish to assess their loan approval chances before committing to a property investment.</p>",
+        "<p style='font-size: 22px; text-align: center;padding-left: 2rem;padding-right: 2rem;'>Welcome to our HomeLoan Assurance Advisor, a sophisticated module designed to provide invaluable insights into your home loan eligibility. Purchasing a property is a significant step, and we understand the need for financial clarity in this process.Our advanced tool offers a comprehensive analysis tailored to your unique financial situation, helping you navigate the complexities of loan eligibility. Whether you are a first-time homebuyer or looking to invest in additional property, this tool empowers you to make informed decisions.Assess your loan approval chances with confidence using the HomeLoan Assurance Advisor.</p>",
         unsafe_allow_html=True,
     )
     st.markdown("***")
@@ -239,7 +240,9 @@ def load_eligibility_Page():
                     if predicted_value == 1.0:
                         st.success("Your loan will be approved!", icon="✅")
                     elif predicted_value == 0.0:
-                        st.error("This is a failure message!", icon="❌")
+                        st.error(
+                            "Unfortunately, your loan application may not be approved. Please review your information or consult with a loan advisor for further assistance.",
+                            icon="❌")
 
 
 load_eligibility_Page()
