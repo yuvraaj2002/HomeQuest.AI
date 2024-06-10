@@ -24,20 +24,20 @@ st.markdown(
 
 # Loading the facilities dataframe
 with open(
-    "Artifacts/Facilities_RE.pkl",
+    "Artifacts/Recommendation_Engine/Facilities_RE.pkl",
     "rb",
 ) as file:
     Facilities_Recomm_df = pickle.load(file)
 
 # Loading the cosine similarities
 with open(
-    "Artifacts/CosineSim_Prices.pkl",
+    "Artifacts/Recommendation_Engine/CosineSim_Prices.pkl",
     "rb",
 ) as file:
     Cosine_Similarity_Prices = pickle.load(file)
 
 with open(
-    "Artifacts/CosineSim_facilities.pkl",
+    "Artifacts/Recommendation_Engine/CosineSim_facilities.pkl",
     "rb",
 ) as file:
     Cosine_Similarity_Facilities = pickle.load(file)
@@ -183,7 +183,7 @@ def Recommendation_System_Page():
 
         # Create a DataFrame from the data
         df = pd.DataFrame(data)
-        custom_colors = ["#AEF359", "#03C04A"]
+        custom_colors = ["#AEF359", "#E1FFD4"]
 
         # Create a dynamic pie chart using Plotly Express
         fig = px.pie(
