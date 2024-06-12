@@ -183,7 +183,7 @@ def Recommendation_System_Page():
 
         # Create a DataFrame from the data
         df = pd.DataFrame(data)
-        custom_colors = ["#AEF359", "#E1FFD4"]
+        custom_colors = ["#abdbfc", "#086ccc"]
 
         # Create a dynamic pie chart using Plotly Express
         fig = px.pie(
