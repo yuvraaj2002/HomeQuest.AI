@@ -6,7 +6,7 @@ Prior to accessing the application via the provided link, please take note of th
 - Change the application theme from dark to light by navigating to the settings option located at the top left corner upon launching the application.
 - Optimize the screen zoom to 80% to ensure an optimal user experience.
 
-LIVE PROJECT LINK ➡️ http://16.171.20.104:8501/
+LIVE PROJECT LINK ➡️ https://bit.ly/3yYMSW3
 
 ## Getting Started
 Follow the below mentioned steps for setting up the Project Locally ⬇️
