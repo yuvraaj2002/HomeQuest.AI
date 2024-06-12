@@ -114,7 +114,7 @@ def load_eligibility_Page():
     page_col1, page_col2 = st.columns(spec=(1, 1.2), gap="large")
     with page_col1:
         st.markdown(
-            "<p style='background-color: #CEFCBA; padding: 1rem; border-radius: 10px; font-size: 18px;'> 📌 Wondering how each aspect of your profile influences your home loan eligibility? Explore the Feature Contribution Visualization to understand how each aspect of your profile, such as education level, employment status, dependents, and more, influences your loan eligibility predicted by our advanced machine learning model.</p>",
+            "<p style='background-color: #abdbfc; padding: 1rem; border-radius: 10px; font-size: 18px;'> 📌 Wondering how each aspect of your profile influences your home loan eligibility? Explore the Feature Contribution Visualization to understand how each aspect of your profile, such as education level, employment status, dependents, and more, influences your loan eligibility predicted by our advanced machine learning model.</p>",
             unsafe_allow_html=True,
         )
 
@@ -123,7 +123,7 @@ def load_eligibility_Page():
 
         # Creating a color heatmap using Plotly Express
         fig = px.imshow(
-            coefficients_series.to_frame().T, color_continuous_scale="greens"
+            coefficients_series.to_frame().T, color_continuous_scale="blues"
         )
 
         # Adding axis labels
