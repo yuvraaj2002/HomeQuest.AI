@@ -5,7 +5,7 @@ import streamlit as st
 
 # Set page configuration
 st.set_page_config(
-    page_title="FindHome.AI",
+    page_title="HomeQuest.AI",
     page_icon="🏠",
     layout="wide",
 )
@@ -14,7 +14,7 @@ st.markdown(
     """
         <style>
                .block-container {
-                    padding-top: 3rem;
+                    padding-top: 2rem;
                     padding-bottom: 0rem;
                     # padding-left: 2rem;
                     # padding-right:2rem;
@@ -36,27 +36,31 @@ st.markdown(
 
 # Main page function
 def main_page():
-    Overview_col, Img_col = st.columns(spec=(1.2, 1), gap="large")
+    Overview_col, Img_col = st.columns(spec=(1.4, 1), gap="large")
 
     with Overview_col:
 
         # Content for main page
         st.markdown(
-            "<h1 style='text-align: left; font-size: 70px; '>Home Finder.AI🏡</h1>",
-            unsafe_allow_html=True,
-        )
-        st.write("")
-        st.markdown(
-            "<p style='font-size: 22px; text-align: left;'>The AI-Powered Home Finder is a state-of-the-art tool that transforms the way Gurgaon residents look for their ideal homes by utilizing the strength of sophisticated AI algorithms. Prospective homeowners can take advantage of several advantages provided by this cutting-edge technology, which smoothly streamlines the house-hunting process and provides customized recommendations based on each individual's preferences and needs.There are three separate modules included in this application.</p>",
+            "<h1 style='text-align: left; font-size: 70px; '>HomeQuest.AI🏡</h1>",
             unsafe_allow_html=True,
         )
         st.write("")
         st.markdown("""
+            <p style='font-size: 23px; text-align: left;'>
+                The AI-Powered Home Finder revolutionizes Gurgaon's house-hunting with sophisticated AI algorithms. Seamlessly streamlining the process, it offers tailored recommendations based on individual preferences and needs. Three integrated modules enhance the user experience.
+            </p>
+        """, unsafe_allow_html=True)
+
+        st.write("")
+        st.markdown("""
             <div>
                 <ul>
-                    <li><p style='font-size: 22px; text-align: left;'><em>The Price Prediction Module:</em> Empowered by your input preferences, this module delivers precise estimations of property values, ensuring informed decision-making.</p></li>
-                    <li><p style='font-size: 22px; text-align: left;'><em>The Recommendation Engine:</em> Unlocking a realm of personalized suggestions, this engine utilizes advanced algorithms to match your preferences with the perfect property fit.</p></li>
-                    <li><p style='font-size: 22px; text-align: left;'><em>The Loan Eligibility Module:</em> Seamlessly integrated, this module provides insights into your eligibility for loans, facilitating smooth financial planning.</p></li>
+                    <li><p style='font-size: 22px; text-align: left;'><strong><em>The Data Analysis Module:</em></strong> Harnessing comprehensive data analytics, this module uncovers valuable insights from real estate datasets, enabling informed decision-making with actionable intelligence.</p></li>
+                    <li><p style='font-size: 22px; text-align: left;'><strong><em>The Price Prediction Module:</em></strong> Employs machine learning to deliver precise property value estimations based on user preferences, facilitating confident real estate decisions.</p></li>
+                    <li><p style='font-size: 22px; text-align: left;'><strong><em>The Regression Analysis Module:</em></strong> Utilizes advanced regression models to identify key factors influencing property prices, enabling accurate predictions accounting for complex data relationships.</p></li>
+                    <li><p style='font-size: 22px; text-align: left;'><strong><em>The Loan Eligibility Module:</em></strong> Seamlessly integrated, assesses user eligibility for loans by analyzing financial profiles, aiding in effective financial planning for real estate transactions.</p></li>
+                    <li><p style='font-size: 22px; text-align: left;'><strong><em>The Recommendation System Module:</em></strong> Utilizes advanced recommendation algorithms to match user preferences with tailored property suggestions, streamlining the property search process with personalized recommendations.</p></li>
                 </ul>
             </div>
         """, unsafe_allow_html=True)
@@ -64,7 +68,7 @@ def main_page():
     with Img_col:
         st.write("")
         st.markdown("<div class='top-margin'> </div>", unsafe_allow_html=True)
-        st.image("Artifacts/Main_Img.png")
+        st.image("Artifacts/Banner.jpg")
         st.write("")
 
         social_col1, social_col2, social_col3,social_col4 = st.columns(spec=(1, 1, 1,1), gap="large")
