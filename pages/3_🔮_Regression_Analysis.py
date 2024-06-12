@@ -54,19 +54,19 @@ def conduct_f_test():
     with col2:
         st.write("")
         st.markdown(
-            "<p style='font-size: 19px; text-align: left;background-color:#CEFCBA;padding:1rem;'>Degree of Freedom of model 11, and degree of freedom of residual 2892.</p>",
+            "<p style='font-size: 19px; text-align: left;background-color:#abdbfc;padding:1rem;'>Degree of Freedom of model 11, and degree of freedom of residual 2892.</p>",
             unsafe_allow_html=True,
         )
         st.markdown(
-            "<p style='font-size: 19px; text-align: left;background-color:#CEFCBA;padding:1rem;'>MSR value is 867.66 and MSE value is 1.0047</p>",
+            "<p style='font-size: 19px; text-align: left;background-color:#abdbfc;padding:1rem;'>MSR value is 867.66 and MSE value is 1.0047</p>",
             unsafe_allow_html=True,
         )
         st.markdown(
-            "<p style='font-size: 19px; text-align: left;background-color:#CEFCBA;padding:1rem;'>F Statsitic Value 863.3</p>",
+            "<p style='font-size: 19px; text-align: left;background-color:#abdbfc;padding:1rem;'>F Statsitic Value 863.3</p>",
             unsafe_allow_html=True,
         )
         st.markdown(
-            "<p style='font-size: 19px; text-align: left;background-color:#CEFCBA;padding:1rem;'>P value corresponding to F Statsitic 1.11×10^−16</p>",
+            "<p style='font-size: 19px; text-align: left;background-color:#abdbfc;padding:1rem;'>P value corresponding to F Statsitic 1.11×10^−16</p>",
             unsafe_allow_html=True,
         )
     st.write("")
@@ -96,7 +96,7 @@ def goodness_of_fit():
             x=values,
             y=categories,
             orientation='h',
-            marker=dict(color=['#CEFCBA', '#44844c']),  # Colors for the bars
+            marker=dict(color=['#086ccc', '#abdbfc']),  # Colors for the bars
             width=0.6  # Adjust the bar width
         ))
 
@@ -144,7 +144,7 @@ def independent_variables_analysis():
         x=variables,
         y=coefficients,
         mode='markers',
-        marker=dict(color='#44844c', size=10),
+        marker=dict(color='#086ccc', size=10),
         name='Coefficients'
     ))
 
@@ -301,15 +301,15 @@ def regression_analysis_ui():
     with col2:
         st.write(" ")
         st.markdown(
-            "<p style='font-size: 19px; text-align: left;background-color:#CEFCBA;padding:1rem;'>We begin by assessing the overall significance of the model. This evaluation, using the F-test, determines whether the independent variables, collectively, have a statistically significant relationship with the dependent variable.</p>",
+            "<p style='font-size: 19px; text-align: left;background-color:#abdbfc;padding:1rem;'>We begin by assessing the overall significance of the model. This evaluation, using the F-test, determines whether the independent variables, collectively, have a statistically significant relationship with the dependent variable.</p>",
             unsafe_allow_html=True,
         )
         st.markdown(
-            "<p style='font-size: 19px; text-align: left;background-color:#CEFCBA;padding:1rem;'>Next, we will delve into the strength of the association between the independent and dependent variables. This analysis focuses on the goodness-of-fit of the model, which indicates how well the model captures the variation in the dependent variable explained by the independent variables. To assess this, we will employ two key metrics: R-squared and Adjusted R-squared.</p>",
+            "<p style='font-size: 19px; text-align: left;background-color:#abdbfc;padding:1rem;'>Next, we will delve into the strength of the association between the independent and dependent variables. This analysis focuses on the goodness-of-fit of the model, which indicates how well the model captures the variation in the dependent variable explained by the independent variables. To assess this, we will employ two key metrics: R-squared and Adjusted R-squared.</p>",
             unsafe_allow_html=True,
         )
         st.markdown(
-            "<p style='font-size: 19px; text-align: left;background-color:#CEFCBA;padding:1rem;'>After evaluating the overall model fit, we analyze each independent variable's influence on the dependent variable. We use the coefficient to assess the relationship's magnitude and a t-test and p-value to determine its statistical significance. Additionally, we construct confidence intervals for each coefficient to estimate the true population value and its precision.</p>",
+            "<p style='font-size: 19px; text-align: left;background-color:#abdbfc;padding:1rem;'>After evaluating the overall model fit, we analyze each independent variable's influence on the dependent variable. We use the coefficient to assess the relationship's magnitude and a t-test and p-value to determine its statistical significance. Additionally, we construct confidence intervals for each coefficient to estimate the true population value and its precision.</p>",
             unsafe_allow_html=True,
         )
         with open("Artifacts/Regresion_Analysis.png", "rb") as file:
@@ -330,7 +330,7 @@ def regression_analysis_ui():
     # Calling function for goodness of fit
     goodness_of_fit()
 
-    # Calling function for independnet variable significance
+    # Calling function for Independent variable significance
     independent_variables_analysis()
 
     # Target variable distribution
