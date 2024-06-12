@@ -3,6 +3,7 @@ import plotly.express as px
 import pandas as pd
 import pickle
 import xgboost as xgb
+import warnings
 import numpy as np
 from sklearn.preprocessing import (
     OrdinalEncoder,
@@ -234,8 +235,10 @@ def Price_Prediction_Page():
             "<h1 class='center' style='font-size: 45px;'>Share Your Details for Price Prediction📝</h1>",
             unsafe_allow_html=True,
         )
-        Guideline_text = "<p style='font-size: 18px;'>In order to receive the most accurate price prediction for your property, it's crucial to provide precise and comprehensive details.The more specific and accurate your details about your property's location, size, condition, and any unique features, the more refined and trustworthy the price estimate will be.</p>"
+        Guideline_text = "<p style='font-size: 18px;'>Welcome to our advanced Price Prediction Module, an essential tool designed to provide you with precise and reliable property price estimates. Understanding the value of your property is crucial whether you are planning to buy, sell, or invest. Our module leverages detailed information to deliver the most accurate price predictions tailored to your unique needs.To ensure the highest accuracy in price prediction, it is important to provide specific and comprehensive details about your property. The more accurate your information regarding the property's location, size, condition, and unique features, the more refined and trustworthy the price estimate will be.</p>"
         st.markdown(Guideline_text, unsafe_allow_html=True)
+        st.write("")
+
         input_col1, input_col2 = st.columns(spec=(1, 1), gap="large")
         with input_col1:
             Property_Type = st.selectbox(
