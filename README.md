@@ -6,6 +6,7 @@ The AI-Powered Home Finder is a groundbreaking solution revolutionizing the home
 [![Watch the video](https://img.youtube.com/vi/kSkLeGiZ2mI/maxresdefault.jpg)](https://youtu.be/kSkLeGiZ2mI)
 
 
+
 Prior to accessing the application via the provided link, please take note of the following instructions⚠️
 - Change the application theme from dark to light by navigating to the settings option located at the top left corner upon launching the application.
 - Optimize the screen zoom to 80% to ensure an optimal user experience.
