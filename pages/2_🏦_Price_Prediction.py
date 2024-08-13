@@ -153,7 +153,7 @@ def load_reg_pipeline():
 
     # Load the pipeline from the pickle file
     with open(
-        "Notebook_And_Dataset\Model Building\Pipeline.pkl",
+        "Notebook_And_Dataset/Model Building/Pipeline.pkl",
         "rb",
     ) as file:
         reg_pipeline = pickle.load(file)
