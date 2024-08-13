@@ -3,8 +3,8 @@ The AI-Powered Home Finder is a groundbreaking solution revolutionizing the home
 
 
 ## Project Youtube Demo Video (Click to watch)
-[![Watch the video](https://img.youtube.com/vi/kSkLeGiZ2mI/maxresdefault.jpg)](https://youtu.be/kSkLeGiZ2mI)
-
+[![Watch the video](https://github.com/yuvraaj2002/HomeQuest.AI/blob/master/UI%20Designs/Home_Page.png)](https://youtu.be/kSkLeGiZ2mI?si=UUs8liAxKhu3F5C0)
+If you want to interact with the application by yourself then checkout this ➡️ [Live Project Link](https://findhome-kblfvc5xluhuzswmgnv9fg.streamlit.app/)
 
 
 Prior to accessing the application via the provided link, please take note of the following instructions⚠️
